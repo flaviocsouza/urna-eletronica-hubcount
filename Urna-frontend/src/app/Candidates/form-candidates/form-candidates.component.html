@@ -1,0 +1,45 @@
+<form [formGroup]="formCandidate" (ngSubmit)="submitCandidate()">
+    <div class="row">
+
+        <div class="form-group  col-3">
+            <label for="fullName">Nome Completo</label>
+            <input formControlName="fullName" class="form-control" id="fullName" >
+            <div class="text-danger" *ngIf="formCandidate.get('fullName').errors && this.formCandidate.get('fullName').touched"> 
+                <span *ngIf="formCandidate.get('fullName').errors.required">
+                    <p>Preencha o Nome do Candidato</p>
+                </span>
+            </div>
+        </div>
+        <div class="form-group  col-3">
+            <label for="viceCandidateName">Nome do Vice</label>
+            <input formControlName="viceCandidateName" class="form-control" id="viceCandidateName">
+        </div>
+        <div class="form-group col-3">
+            <label for="role">Cargo</label>
+            <select formControlName="role" class="custom-select" id="role">
+                <option *ngFor="let role of this.roles" class="dropdown-item" [ngValue]="role.roleId">{{role.name}}</option>
+            </select>
+            <div class="text-danger" *ngIf="formCandidate.get('role').errors && this.formCandidate.get('role').touched"> 
+                <span *ngIf="formCandidate.get('role').errors.required">
+                    <p>Preencha o cargo o qual Candidato almeja</p>
+                </span>
+            </div>            
+        </div>
+        <div class="form-group col-3">
+            <label for="captionNumber">Número</label>
+            <input formControlName="captionNumber" class="form-control" id="captionNumber">
+            <div class="text-danger" *ngIf="formCandidate.get('captionNumber').errors && this.formCandidate.get('captionNumber').touched"> 
+                <span *ngIf="formCandidate.get('captionNumber').errors.required">
+                    <p>Preencha o Número do Candidato</p>
+                </span>
+                <span *ngIf="formCandidate.get('captionNumber').errors.pattern">
+                    <p>Para este campo São aceitos apenas digitos</p>
+                </span>
+            </div>
+        </div>
+    </div>
+    <span class="text-danger" *ngIf="this.showMessageError">
+        <p>Por gentileza verifique os dados do candidato</p>
+    </span>
+    <input type="submit" value="Salvar" class="btn btn-success"/>
+</form>

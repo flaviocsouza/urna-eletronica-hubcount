@@ -1,0 +1,21 @@
+<div class="mx-5 my-auto">
+    <p class="label">Voto Para: {{ this.labelVoteFor }}</p>
+    <div class="form-group">
+        <p class="label">Número</p>
+        <form [formGroup]="formCaptionNumber" #digitsForm class="form-row">
+            <input formControlName="firstDigit" name="1"  (input)="checkField($event.target.name)"class="digitBox form-control digit-input col-1 mx-3"  maxlength="1" size="1">
+            <input formControlName="secondDigit" name="2" (input)="checkField($event.target.name)" class="digitBox form-control digit-input col-1 mx-3"  maxlength="1" size="1">
+            <input *ngIf="this.voteFor === 2" formControlName="thirdDigit" name="3" (input)="checkField($event.target.name)" class="digitBox form-control digit-input col-1 mx-3"  maxlength="1" size="1">
+            <input *ngIf="this.voteFor === 2" formControlName="fourthDigit" name="4" (input)="checkField($event.target.name)" class="digitBox form-control digit-input col-1 mx-3"  maxlength="1" size="1">
+            <input *ngIf="this.voteFor === 2" formControlName="fifthDigit" name="5" (input)="checkField($event.target.name)" class="digitBox form-control digit-input col-1 mx-3"  maxlength="1" size="1">
+        </form>
+    </div>
+    <p class="label">Nome: {{ selectedCandidate.fullName }}</p>
+    <p class="label" >Vice {{ selectedCandidate.viceCandidateName }}</p>
+    <div class="d-flex flex-row-reverse ">
+        <button class="btn btn-success btn-lg mx-1" (click)="submitVote()">Votar</button>
+        <button class="btn btn-primary btn-lg mx-1" (click)="submitVote(true)">Branco</button>
+        <button class="btn btn-danger btn-lg mx-1" (click)="clearForm()">Cancela</button>
+    </div>
+</div>
+

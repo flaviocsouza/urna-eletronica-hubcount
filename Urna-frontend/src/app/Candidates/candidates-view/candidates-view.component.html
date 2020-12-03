@@ -1,0 +1,22 @@
+
+<h1>Listagem de Candidatos</h1>
+
+<table class="table table-hover">
+    <tr>
+        <th>Nome Completo</th>
+        <th>Vice Candidato</th>
+        <th>Data de Registro</th>
+        <th>Número</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let candidate of candidates">
+        <td>{{ candidate.fullName }}</td>
+        <td>{{ candidate.viceCandidateName }}</td>
+        <td>{{ candidate.registrationDate }}</td>
+        <td class="mx-auto">{{ candidate.captionNumber }}</td>
+        <td><button class="btn btn-secondary" (click)="editCandidate(candidate)">Editar</button></td>
+        <td><button class="btn btn-danger" (click)="deleteCandidate(candidate.id)">Excluir</button></td>
+    </tr>
+</table>
+<button class="btn btn-success" (click)="insertCandidate()">Inserir Novo Candidato</button>

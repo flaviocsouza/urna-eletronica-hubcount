@@ -5,7 +5,25 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Urna-backend", "Urna-backend.csproj", "{4932C790-B749-4B97-AB05-595862144E41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urna-frontend", "..\Urna-frontend\Urna-frontend.csproj", "{9E2D2C24-96A2-475C-AD78-F019BD03475A}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Urna-frontend", "..\Urna-frontend\", "{BFFE69F1-1A0D-4C1D-8F12-B8BBD15AC4C2}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53055"
+		Debug.AspNetCompiler.PhysicalPath = "..\Urna-frontend\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53055\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53055"
+		Release.AspNetCompiler.PhysicalPath = "..\Urna-frontend\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53055\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53055"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +35,10 @@ Global
 		{4932C790-B749-4B97-AB05-595862144E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4932C790-B749-4B97-AB05-595862144E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4932C790-B749-4B97-AB05-595862144E41}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9E2D2C24-96A2-475C-AD78-F019BD03475A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E2D2C24-96A2-475C-AD78-F019BD03475A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9E2D2C24-96A2-475C-AD78-F019BD03475A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E2D2C24-96A2-475C-AD78-F019BD03475A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFFE69F1-1A0D-4C1D-8F12-B8BBD15AC4C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFFE69F1-1A0D-4C1D-8F12-B8BBD15AC4C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFFE69F1-1A0D-4C1D-8F12-B8BBD15AC4C2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFFE69F1-1A0D-4C1D-8F12-B8BBD15AC4C2}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

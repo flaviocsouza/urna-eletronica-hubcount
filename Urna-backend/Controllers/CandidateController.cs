@@ -36,7 +36,7 @@ namespace Urna_backend.Controllers
             int rowsChanged = _context.SaveChanges();
             
             if(rowsChanged == 1)
-                return Ok("Registro inserido");
+                return Ok();
 
             return BadRequest();
         }
@@ -49,20 +49,19 @@ namespace Urna_backend.Controllers
             int rowsChanged = _context.SaveChanges();
 
             if (rowsChanged > 0)
-                return Ok("Registro Deletado");
+                return Ok();
             
             return BadRequest();
         }
 
-        [HttpPut("/EditCandidate/{id:Guid}")]
-        public ActionResult<Candidate> editCandidate (Guid id, Candidate candidateNew)
+        [HttpPut("/EditCandidate")]
+        public ActionResult<Candidate> editCandidate (Candidate candidateNew)
         {
-            candidateNew.id = id;
             _context.Candidates.Update(candidateNew);
             int rowsChanged = _context.SaveChanges();
 
             if (rowsChanged > 0)
-                return Ok("Registro Deletado");
+                return Ok();
 
             return BadRequest();
         }

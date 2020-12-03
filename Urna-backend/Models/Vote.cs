@@ -16,9 +16,8 @@ namespace Urna_backend.Models
         public Vote()
         {
             id = Guid.NewGuid();
-            voteCode = new VoteCode { ipAdress = this.ipAdress, voteDate = this.voteDate }.generate();
         }
-
+        [JsonIgnore]
         public Guid id { get; set; }
         [JsonIgnore]
         public string voteCode { get; set; }

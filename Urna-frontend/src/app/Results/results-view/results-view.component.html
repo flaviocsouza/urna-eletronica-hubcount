@@ -1,0 +1,33 @@
+<h1>Resultados</h1>
+<div class="row">
+    <p class="mx-2">Total de Votos {{ this.results.allVotes.length }}</p>
+    <p class="mx-2"> Votos em Branco ou Nulos {{this.results.blankOrNullVotes.length}}</p>
+</div>
+<div>
+    <h2>Votos Para Prefeitos</h2>
+    <table class="table table-hover">
+        <tr>
+            <th>Número do Candidato</th>
+            <th>Data do voto</th>
+        </tr>
+        <tr *ngFor="let vote of this.results.mayorVotes">
+            <td>{{ vote.captionNumber }}</td>
+            <td>{{ vote.voteDate }}</td>
+        </tr>
+    </table>
+    <p>Total de Votos para Prefeito {{this.results.mayorVotes.length}}</p>
+</div>
+<div>
+    <h2>Votos Para Vereador</h2>
+    <table class="table table-hover">
+        <tr>
+            <th>Número do Candidato</th>
+            <th>Data do voto</th>
+        </tr>
+        <tr *ngFor="let vote of this.results.councilorVotes">
+            <td>{{ vote.captionNumber }}</td>
+            <td>{{ vote.voteDate }}</td>
+        </tr>
+    </table>
+    <p>Total de Votos para Vereador {{this.results.councilorVotes.length}}</p>
+</div>

@@ -26,17 +26,18 @@ namespace Urna_backend.Controllers
         {
             vote.blankVote = vote.captionNumber == 0;
             vote.nullVote = _context.Candidates.Count(c => c.captionNumber == vote.captionNumber) == 0;
+            vote.voteCode = new VoteCode { ipAdress = vote.ipAdress, voteDate = vote.voteDate }.generate();
 
             _context.Votes.Add(vote);
             int rowsChanged = _context.SaveChanges();
            
             if(rowsChanged == 1) 
-                return Ok("Voto Computado");
+                return Ok();
             
             return BadRequest();
         }
 
-        [HttpGet("/GetVotes/{voteType:int}")]
+        [HttpGet("/GetVotes/{voteType}")]
         public ActionResult<IQueryable<Vote>> GetVotes(int voteType)
         {
 

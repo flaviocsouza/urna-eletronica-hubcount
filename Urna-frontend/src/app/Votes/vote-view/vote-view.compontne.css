@@ -1,0 +1,15 @@
+.digitBox {
+    height: 100px;
+    width: 100px;
+    font-size: 6rem;
+    text-align: center;
+}
+
+.label {
+    font-size: 2rem;
+    text-decoration: solid;
+}
+
+.value{
+    font-size: 2rem;
+}
